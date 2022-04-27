@@ -28,7 +28,7 @@ taskQueue.enqueueTask(task);
 task.start();
 
 // Will pause to handle tasks concurrently even when there is room for concurrency.
-// Currently running tasks will complete/fail
+// Currently running tasks will continue until complete/fail
 task.pause(); 
 ```
 
@@ -43,7 +43,7 @@ canStartTask: boolean - There is still room for concurrency
 ### AsyncTaskQueueEvent.COMPLETE
 Emitted when a task has completed
 Listen to this event for obtaining task result.
-When prueQueue option is true, the task results will be in the order they were enqueued.
+When pureQueue option is true, the task results will be in the order they were enqueued.
 Otherwise, 
 result: TaskResult - Result of the successfully completed task {
   task: // The task definition you enqueued,
